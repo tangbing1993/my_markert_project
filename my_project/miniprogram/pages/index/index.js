@@ -7,7 +7,7 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    permission_modal_status:true
+    permission_modal_status:true,
   },
   onLoad: function () {
     let app = getApp();
