@@ -6,37 +6,39 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    permission_modal_status:true
   },
   onLoad: function () {
-    console.log(1)
-    if (!wx.cloud) {
-      wx.redirectTo({
-        url: '../chooseLib/chooseLib',
-      })
-      return
-    }
-
-    // 获取用户信息
-    wx.getSetting({
+    let app = getApp();
+    // if (!wx.cloud) {
+      
+    //   wx.redirectTo({
+    //     url: '../chooseLib/chooseLib',
+    //   })
+    //   return
+    // }
+    
+    // wx.openSetting()
+    this.checkUserPermission(app)
+  },
+  checkUserPermission:function(data){
+    wx.getUserInfo({
       success: res => {
-        console.log(res)
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              console.log(res)
-              this.setData({
-                avatarUrl: res.userInfo.avatarUrl,
-                userInfo: res.userInfo
-              })
-            }
-          })
-        }
+        this.setData({
+          avatarUrl : res.userInfo.avatarUrl,
+          userInfo : res.userInfo,
+          user_info_status : true
+        })
+      },
+      fail: e => {
+        this.setData({
+          user_info_status: false
+        })
+        
       }
     })
-  },
-
- 
+    
+  }
 
 })

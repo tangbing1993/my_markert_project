@@ -1,0 +1,30 @@
+view{
+  box-sizing:border-box
+}
+.modal_button_container{
+  display: flex;
+  height: 70rpx;
+}
+.modal_button{
+  flex: 1;
+  font-weight: bold;
+  widows: 100rpx!important;
+}
+#permission_modal{
+  margin: auto;
+  width:500rpx;
+  padding: 20rpx;
+  background: lightblue;
+  border-radius: 4rpx;
+  position: relative;
+  top: 200rpx;
+}
+#permission_title{
+  text-align: center;
+  padding: 20rpx 0;
+  font-size: 30rpx;
+}
+.modal_permission_button{
+  width: 150rpx!important;
+  
+}

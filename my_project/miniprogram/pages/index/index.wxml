@@ -1,1 +1,36 @@
-<view></view>
+<view>
+  <view>上</view>
+  <view>中</view>
+  <view>下</view>
+
+
+  <view wx:if="{{permission_modal_status}}" id="permission_modal">
+    <view id="permission_title">请求微信授权</view>
+    <view class="modal_button_container">
+      <view class="modal_button">取消授权</view>
+      <view class="modal_button"><button id="modal_permission_button" class='auth' open-type='getUserInfo' bindgetuserinfo='getUserInfo' style="padding:0;width:150rpx;font-weight:bold;">同意授权</button></view>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button class='auth' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>123</button>
